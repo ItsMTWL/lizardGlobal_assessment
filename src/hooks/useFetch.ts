@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import {Entry} from "../types/dbTypes"
 
-const useFetch = (url, id = "") => {
-    const [data, setData] = useState(null);
+const useFetch = (url:URL, id = "") => {
+    const emptyArray: Array<any> = [] 
+    const [data, setData] = useState(emptyArray);
     const [status, setLoadStatus] = useState(false);
 
     useEffect(() => {
@@ -9,14 +11,14 @@ const useFetch = (url, id = "") => {
             .then((res) => res.json())
             .then((data) => setData(data.posts))
             .then(() => setLoadStatus(true)); //sets  true when data successfully loaded
-    }, [url]);
+    }, []);
 
     if (!status) return[data,status]    //guard 
 
     return id === ""?
         [data, status] : 
-        [data.filter((item)=>item.id === id)
+        [data.filter((item:Entry)=>item.id === id)
             .reduce((A, item) => A = item, null),status]
-};
+}; 
 
 export default useFetch;

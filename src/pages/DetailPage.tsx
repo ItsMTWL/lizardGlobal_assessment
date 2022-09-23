@@ -1,14 +1,15 @@
 import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import { Category } from "../types/dbTypes";
 
 function DetailPage() {
   const { object_id } = useParams();
-  const [Data, Status] = useFetch('/api/posts', object_id);
+  const [Data, Status] = useFetch(new URL('http://localhost:3000/api/posts'), object_id);
   const navigate = useNavigate();
 
   if (!Status) return <div> Loading... </div>
 
-  const listCat = (item) => {
+  const listCat = (item: Category) => {
     return <li>{item.name}</li>
   }
 
@@ -26,7 +27,7 @@ function DetailPage() {
     </div>
     <div>
       <ul>
-        {Data.categories.map((item) => listCat(item))}
+        {Data.categories.map((item: Category) => listCat(item))}
       </ul>
 
     </div>

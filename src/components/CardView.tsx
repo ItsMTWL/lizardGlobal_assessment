@@ -1,9 +1,11 @@
 import Card from "react-bootstrap/Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link,useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import {Entry} from "../types/dbTypes"
 
 // Collection of multiple cards which makes up the list 
-function CardView(list) {
+function CardView(list:Array<Entry>) {
     return <div>
         {list.map((object) =>
             Cards(object)
@@ -12,11 +14,10 @@ function CardView(list) {
 }
 
 // indivisual cards which represents 1 Json entry 
-function Cards(object) {
-    const location = useLocation();
+function Cards(object: Entry) {
     const nextPath = '/Details/' + object.id;
      
-    return <Link to={{pathname:nextPath, state:{ prevPath:location.pathname}}}>
+    return <Link to={nextPath}>
         <Card border="dark">
         <Card.Header>
             {object.title}
