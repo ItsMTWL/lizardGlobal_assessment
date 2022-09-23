@@ -1,0 +1,51 @@
+.backBtn{
+    background-color: rgba(255, 255, 255, 0); 
+    border: none;
+    color: rgb(255, 255, 255); 
+    cursor: pointer; 
+} 
+
+.backIcon{
+    font-size: 30px;
+} 
+
+.container{
+    width: min(95%,500px) !important;
+    border-radius: 15px;
+    padding: 5px 10px 20px;
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color:  rgb(41, 39, 39);
+}
+
+.titleDiv{
+    color: white;
+    margin-top: 15px;
+}
+
+.authorDiv{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.title{
+    margin-top: 3px;
+}
+
+.catDiv{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.summaryDiv{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}

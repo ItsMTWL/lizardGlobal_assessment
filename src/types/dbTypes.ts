@@ -4,7 +4,7 @@ type Entry = {
     publishDate: string,
     author: Author,
     summary: string
-    categories: Array<Category> 
+    categories: Array<Category>
 }
 
 type Author = {
@@ -17,4 +17,4 @@ type Category = {
     name: string
 }
 
-export type {Entry, Category};
+export type { Entry, Category };

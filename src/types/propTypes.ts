@@ -1,4 +1,4 @@
-import {Entry} from "./dbTypes";
+import { Entry } from "./dbTypes";
 
 type CheckboxProps = {
     handleFilters: any;
@@ -6,5 +6,10 @@ type CheckboxProps = {
     filter: Array<string>;
 }
 
+type CardListProps = {
+    list: Array<Entry>
+}
 
-export type {CheckboxProps} 
+
+
+export type { CheckboxProps, CardListProps } 

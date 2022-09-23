@@ -1,0 +1,52 @@
+.containerHome {
+    width: min(95%, 1000px) !important;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.shown {
+    width: 101px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.loadBtn {
+    margin: auto;
+    padding: 7px 12px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.445);
+    border: none;
+    color: rgb(255, 255, 255);
+}
+
+.listDiv {
+    width: min(95%, 600px);
+    margin: auto;
+}
+
+@media only screen and (max-width: 1050px) {
+    .checkboxDiv {
+        width: min(95%, 600px);
+        display: block;
+        margin: auto;
+        margin-bottom: 30px;
+        border: 4px solid black;
+        padding: 5px;
+    }
+}
+
+
+@media only screen and (min-width: 1050px) {
+    .checkboxDiv {
+        display: block;
+        float: right;
+        position: fixed;
+        right: 5px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}

@@ -1,9 +1,9 @@
 import { Checkbox } from 'antd';
 import React, { useState } from 'react';
+import { CheckboxProps } from "../types/propTypes"
+import "../styles/checkBoxStyle.scss"
 
-import {CheckboxProps} from "../types/propTypes"
-
-function CheckBox(props:CheckboxProps) {
+function CheckBox(props: CheckboxProps) {
     const [Checked, setChecked] = useState(props.filter)
 
 
@@ -20,12 +20,12 @@ function CheckBox(props:CheckboxProps) {
             .reduce((A, v) => A + v) :
         0
 
-    const boolCheck = (value: string) => inChecked(value) > 0 
+    const boolCheck = (value: string) => inChecked(value) > 0
 
-    const handleToggle = (value:string) => {
+    const handleToggle = (value: string) => {
 
         const newChecked = [...Checked]
-        
+
         //use the values from previous check to see if it is already checked 
         if (inChecked(value) === 0) {
             newChecked.push(value)
@@ -41,14 +41,15 @@ function CheckBox(props:CheckboxProps) {
 
     // creates a checkbox for user interface which would allow user to toggle filters
     return <div>
-        {categories.map((value:any , key) => (
+        {categories.map((value: any, key) => (
             <React.Fragment key={key}>
                 <Checkbox
+                    className='checkbox'
                     onChange={() => handleToggle(value)}
                     type="checkbox"
                     checked={boolCheck(value)}
                 />
-                <span>{value}</span> <br />
+                <span className={boolCheck(value) ? 'selected' : 'choise'}> {value}</span> <br />
             </React.Fragment>
         ))}
     </div>

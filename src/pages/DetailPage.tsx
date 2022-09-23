@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { Category } from "../types/dbTypes";
+import "../styles/designPagestyle.scss"
+import LeftCircleOutlined from "@ant-design/icons/lib/icons/LeftCircleOutlined";
 
 function DetailPage() {
   const { object_id } = useParams();
@@ -13,25 +15,25 @@ function DetailPage() {
     return <li>{item.name}</li>
   }
 
-  return <div style={{ width: `75%`, margin: '2rem auto', border: '3px solid black' }} >
+
+  return <div className="container">
     <button
+      className="backBtn"
       onClick={() => navigate(-1)}
-    > Back but more beutiful later</button>
-    <br />
-    <div>
+    ><LeftCircleOutlined className="backIcon" /></button>
+    <div className="titleDiv">
       <h3>{Data.title}</h3>
     </div>
-    <div >
+    <div className="authorDiv">
       <img src={Data.author.avatar} alt={Data.author.name}></img>
-      <h4>{Data.author.name}</h4>
+      <h4 className="title">{Data.author.name}</h4>
     </div>
-    <div>
+    <div className="catDiv">
       <ul>
         {Data.categories.map((item: Category) => listCat(item))}
       </ul>
-
     </div>
-    <div>
+    <div className="summaryDiv">
       <p>{Data.summary}</p>
 
     </div>
